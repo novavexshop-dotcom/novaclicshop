@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  /* === NOVA CLIC SHOP - CLEAN 3-COLOR ECOMMERCE THEME === */
+  /* 1. Dark background */
+  --bg-primary: #0A0A0A;
+  /* 2. Surfaces / cards */
+  --bg-secondary: #141414;
+  --bg-tertiary: #1F1F1F;
+  --bg-card: #111111;
+  --bg-card-hover: #1A1A1A;
+
+  /* 3. Single strong accent - Professional tech blue (clean, official, llamativo) */
+  --accent: #3B82F6;
+  --accent-hover: #60A5FA;
+  --accent-dim: #1E40AF;
+
+  --text-main: #F4F4F5;
+  --text-muted: #71717A;
+  --text-subtle: #52525B;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.15);
+
+  --success: #22C55E;
+  --warning: #EAB308;
+  --error: #EF4444;
+
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--bg-primary);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* === Premium Typography === */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* === Design Tokens for Components === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 9999px;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 42, 95, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 9px;
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  background: var(--accent);
+  color: white;
+}
+
+.badge-new {
+  background: var(--accent);
+  color: white;
+}
+
+.badge-promo {
+  background: #F59E0B;
+  color: #0A0A0A;
+}
+
+/* Inputs - Polished e-commerce search */
+.input {
+  width: 100%;
+  padding: 11px 18px 11px 44px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  background: #1A1A1A;
+}
+
+.input::placeholder {
+  color: var(--text-subtle);
+}
+
+/* Animations - Clean & Optimized for e-commerce */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product-image {
+  transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover .product-image {
+  transform: scale(1.065);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.8rem;
+  }
+}
