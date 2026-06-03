@@ -184,30 +184,12 @@ export default function Header() {
       {/* Global Mobile Menu Drawer (works on all pages except /productos which uses its own sidebar drawer) */}
       {!isCatalogPage && isMobileMenuOpen && (
         <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(0,0,0,0.55)',
-            zIndex: 95,
-          }}
+          className="mobile-menu-overlay"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <div
+            className="mobile-menu-panel"
             onClick={(e) => e.stopPropagation()}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '82%',
-              maxWidth: 280,
-              height: '100%',
-              background: 'var(--bg-secondary)',
-              borderRight: '1px solid var(--border-color)',
-              padding: '1rem',
-              overflowY: 'auto',
-              display: 'flex',
-              flexDirection: 'column',
-            }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
               <strong style={{ fontSize: '16px' }}>Menú</strong>

@@ -128,28 +128,12 @@ export default function CategorySidebar({ activeCategory, activeSubcategory, onS
       {/* Mobile drawer / overlay for sidebar (triggered by header hamburger) */}
       {mobileOpen && (
         <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: 'rgba(0,0,0,0.55)',
-            zIndex: 95,
-          }}
+          className="catalog-mobile-drawer"
           onClick={closeMobile}
         >
           <div
+            className="catalog-mobile-panel"
             onClick={(e) => e.stopPropagation()}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '82%',
-              maxWidth: 280,
-              height: '100%',
-              background: 'var(--bg-secondary)',
-              borderRight: '1px solid var(--border-color)',
-              padding: '1rem',
-              overflowY: 'auto',
-            }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
               <strong>Categorías</strong>
