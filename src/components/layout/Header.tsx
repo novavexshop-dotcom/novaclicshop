@@ -16,7 +16,7 @@ export default function Header() {
   const [showResults, setShowResults] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  const { getTotalItems, getTotalPrice, openCart } = useCartStore();
+  const { getTotalItems, getTotalPrice, openCart, isOpen: cartIsOpen } = useCartStore();
   const { getFavoriteCount } = useFavoritesStore();
 
   const cartCount = getTotalItems();
@@ -144,17 +144,21 @@ export default function Header() {
             }}
           >
             <i className="fa-regular fa-heart"></i>
-            <span className="badge" id="fav-count">{mounted ? favCount : 0}</span>
+            {mounted && favCount > 0 && (
+              <span className="badge" id="fav-count">{favCount}</span>
+            )}
           </a>
 
           <button
-            className="action-btn cart-toggle-btn"
+            className={`action-btn cart-toggle-btn ${cartIsOpen ? 'is-open' : ''}`}
             id="btn-cart-toggle"
             title="Ver Carrito"
             onClick={() => openCart()}
           >
             <i className="fa-solid fa-cart-shopping"></i>
-            <span className="badge" id="cart-count">{mounted ? cartCount : 0}</span>
+            {mounted && cartCount > 0 && (
+              <span className="badge" id="cart-count">{cartCount}</span>
+            )}
             <span className="cart-total-header hidden-mobile">{mounted ? formatPrice(cartTotal) : 'S/ 0.00'}</span>
           </button>
 
@@ -240,12 +244,23 @@ export default function Header() {
             <hr style={{ borderColor: 'var(--border-color)', margin: '0.5rem 0' }} />
 
             {/* Quick actions */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <a href="#" className="action-btn" style={{ justifyContent: 'flex-start', width: '100%', padding: '0.5rem' }} onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); window.dispatchEvent(new CustomEvent('open-favorites')); }}>
-                <i className="fa-regular fa-heart"></i> <span style={{ marginLeft: 8 }}>Favoritos ({favCount})</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <a 
+                href="#" 
+                className="action-btn" 
+                style={{ justifyContent: 'flex-start', width: '100%', padding: '0.45rem 0.6rem', fontSize: 14 }} 
+                onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); window.dispatchEvent(new CustomEvent('open-favorites')); }}
+              >
+                <i className="fa-regular fa-heart" style={{ fontSize: 15 }}></i> 
+                <span style={{ marginLeft: 8, fontSize: 13 }}>Favoritos{favCount > 0 ? ` (${favCount})` : ''}</span>
               </a>
-              <button className="action-btn" style={{ justifyContent: 'flex-start', width: '100%', padding: '0.5rem' }} onClick={() => { setIsMobileMenuOpen(false); openCart(); }}>
-                <i className="fa-solid fa-cart-shopping"></i> <span style={{ marginLeft: 8 }}>Carrito ({cartCount})</span>
+              <button 
+                className="action-btn" 
+                style={{ justifyContent: 'flex-start', width: '100%', padding: '0.45rem 0.6rem', fontSize: 14 }} 
+                onClick={() => { setIsMobileMenuOpen(false); openCart(); }}
+              >
+                <i className="fa-solid fa-cart-shopping" style={{ fontSize: 15 }}></i> 
+                <span style={{ marginLeft: 8, fontSize: 13 }}>Carrito{cartCount > 0 ? ` (${cartCount})` : ''}</span>
               </button>
             </div>
 

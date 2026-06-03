@@ -7,6 +7,7 @@ import { Product } from '@/src/lib/types';
 import { useCartStore } from '@/src/lib/cart-store';
 import { useFavoritesStore } from '@/src/lib/favorites-store';
 import { formatPrice } from '@/src/lib/utils';
+import { toast } from 'sonner';
 
 interface Props {
   product: Product;
