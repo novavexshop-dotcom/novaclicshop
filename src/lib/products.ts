@@ -1,0 +1,226 @@
+import { Product } from './types';
+
+export const products: Product[] = [
+  // === ARDUINO Y ROBÓTICA ===
+  {
+    id: 1,
+    name: 'Arduino Uno R3',
+    price: 42.9,
+    category: 'arduino',
+    subcategory: 'placas',
+    image: '/products/arduino-uno.jpg',
+    description: 'Placa de desarrollo oficial Arduino Uno R3 con ATmega328P. Ideal para proyectos de robótica, automatización y aprendizaje de electrónica.',
+    stock: 25,
+    rating: 4.8,
+    featured: true,
+  },
+  {
+    id: 2,
+    name: 'Arduino Nano V3',
+    price: 28.5,
+    originalPrice: 34.9,
+    category: 'arduino',
+    subcategory: 'placas',
+    image: '/products/arduino-nano.jpg',
+    description: 'Versión compacta del Arduino Uno. Perfecta para proyectos portátiles y wearables. Incluye cable USB.',
+    stock: 18,
+    rating: 4.6,
+    isOffer: true,
+  },
+  {
+    id: 3,
+    name: 'Sensor DHT11 Temperatura y Humedad',
+    price: 8.9,
+    category: 'arduino',
+    subcategory: 'sensores',
+    image: '/products/dht11-sensor.jpg',
+    description: 'Sensor digital de temperatura y humedad. Fácil integración con Arduino y ESP. Rango 0-50°C / 20-80% HR.',
+    stock: 42,
+    rating: 4.5,
+  },
+  {
+    id: 4,
+    name: 'Sensor Ultrasonido HC-SR04',
+    price: 6.5,
+    category: 'arduino',
+    subcategory: 'sensores',
+    image: '/products/hc-sr04.jpg',
+    description: 'Módulo sensor de distancia por ultrasonido. Rango 2cm - 400cm. Ideal para robots y medición de obstáculos.',
+    stock: 55,
+    rating: 4.7,
+    featured: true,
+  },
+  {
+    id: 5,
+    name: 'Módulo Relé 5V 1 Canal',
+    price: 7.9,
+    category: 'arduino',
+    subcategory: 'actuadores',
+    image: '/products/rele-5v.jpg',
+    description: 'Relé optoacoplado de 5V para control de cargas AC/DC hasta 250V 10A. Seguro para Arduino y Raspberry.',
+    stock: 30,
+    rating: 4.4,
+  },
+  {
+    id: 6,
+    name: 'Kit Motor Servo SG90 + Driver',
+    price: 15.9,
+    originalPrice: 19.9,
+    category: 'arduino',
+    subcategory: 'actuadores',
+    image: '/products/sg90-servo.jpg',
+    description: 'Servo motor SG90 9g + driver. Perfecto para brazos robóticos, cámaras y proyectos de movimiento.',
+    stock: 22,
+    rating: 4.3,
+    isOffer: true,
+  },
+
+  // === ACCESORIOS CELULAR ===
+  {
+    id: 7,
+    name: 'Cargador Rápido 20W USB-C',
+    price: 24.9,
+    category: 'celular',
+    subcategory: 'carga',
+    image: '/products/cargador-20w.jpg',
+    description: 'Cargador de pared PD 20W con cable USB-C a Lightning / USB-C. Compatible iPhone y Android. Carga rápida.',
+    stock: 35,
+    rating: 4.6,
+  },
+  {
+    id: 8,
+    name: 'Cable USB-C a USB-C 1m Trenzado',
+    price: 12.5,
+    category: 'celular',
+    subcategory: 'carga',
+    image: '/products/cable-usbc.jpg',
+    description: 'Cable de datos y carga de alta calidad, trenzado nylon. Soporta 100W y transferencia rápida.',
+    stock: 60,
+    rating: 4.8,
+  },
+  {
+    id: 9,
+    name: 'Audífonos Bluetooth TWS Pro',
+    price: 49.9,
+    originalPrice: 69.9,
+    category: 'celular',
+    subcategory: 'audio-cel',
+    image: '/products/audifonos-tws.jpg',
+    description: 'Audífonos inalámbricos con cancelación de ruido, micrófono y estuche de carga. 30h de batería.',
+    stock: 15,
+    rating: 4.5,
+    isOffer: true,
+    featured: true,
+  },
+  {
+    id: 10,
+    name: 'Funda Silicona + Vidrio Templado iPhone',
+    price: 18.9,
+    category: 'celular',
+    subcategory: 'proteccion',
+    image: '/products/funda-iphone.jpg',
+    description: 'Combo funda de silicona suave + vidrio templado 9H. Disponible para varios modelos (consultar).',
+    stock: 48,
+    rating: 4.2,
+  },
+  {
+    id: 11,
+    name: 'Soporte Celular para Auto con Ventosa',
+    price: 14.5,
+    category: 'celular',
+    subcategory: 'proteccion',
+    image: '/products/soporte-auto.jpg',
+    description: 'Soporte magnético o con ventosa para parabrisas. 360° rotación. Universal.',
+    stock: 27,
+    rating: 4.1,
+  },
+
+  // === ACCESORIOS COMPUTADORA / LAPTOP ===
+  {
+    id: 12,
+    name: 'Teclado Mecánico RGB 60% Gamer',
+    price: 89.9,
+    category: 'computadora',
+    subcategory: 'perifericos',
+    image: '/products/teclado-mecanico.jpg',
+    description: 'Teclado mecánico compacto con switches azules/rojos, RGB customizable y cable desmontable.',
+    stock: 12,
+    rating: 4.7,
+    featured: true,
+  },
+  {
+    id: 13,
+    name: 'Mouse Gamer Inalámbrico 16000 DPI',
+    price: 45.9,
+    originalPrice: 55.9,
+    category: 'computadora',
+    subcategory: 'perifericos',
+    image: '/products/mouse-gamer.jpg',
+    description: 'Mouse ergonómico gaming con sensor óptico preciso, 6 botones programables y batería recargable.',
+    stock: 19,
+    rating: 4.6,
+    isOffer: true,
+  },
+  {
+    id: 14,
+    name: 'Audífonos Gamer con Micrófono 7.1',
+    price: 65.0,
+    category: 'computadora',
+    subcategory: 'audio-pc',
+    image: '/products/audifonos-gamer.jpg',
+    description: 'Headset gaming con sonido surround virtual 7.1, micrófono noise cancelling y luces RGB.',
+    stock: 23,
+    rating: 4.4,
+  },
+  {
+    id: 15,
+    name: 'Hub USB 3.0 4 Puertos + Lector SD',
+    price: 19.9,
+    category: 'computadora',
+    subcategory: 'almacenamiento',
+    image: '/products/hub-usb.jpg',
+    description: 'Hub USB 3.0 de 4 puertos + lector de tarjetas SD/TF. Alimentado. Compatible Windows/Mac/Linux.',
+    stock: 33,
+    rating: 4.3,
+  },
+  {
+    id: 16,
+    name: 'Memoria USB 64GB 3.2 Alta Velocidad',
+    price: 22.5,
+    category: 'computadora',
+    subcategory: 'almacenamiento',
+    image: '/products/usb-64gb.jpg',
+    description: 'Pendrive USB 3.2 de 64GB con tapa metálica. Velocidades hasta 150MB/s lectura.',
+    stock: 40,
+    rating: 4.5,
+  },
+  {
+    id: 17,
+    name: 'Kit Protoboard 830 Puntos + Jumpers',
+    price: 11.9,
+    category: 'arduino',
+    subcategory: 'placas',
+    image: '/products/protoboard.jpg',
+    description: 'Protoboard 830 puntos + 65 cables jumper macho-macho. Esencial para prototipado electrónico.',
+    stock: 50,
+    rating: 4.9,
+  },
+];
+
+export function getFeaturedProducts(limit = 6): Product[] {
+  return products.filter((p) => p.featured).slice(0, limit);
+}
+
+export function getProductsByCategory(category: string): Product[] {
+  if (!category || category === 'all') return products;
+  return products.filter((p) => p.category === category);
+}
+
+export function getProductById(id: number): Product | undefined {
+  return products.find((p) => p.id === id);
+}
+
+// For offers section / filter
+export function getOfferProducts(): Product[] {
+  return products.filter((p) => p.isOffer);
+}
