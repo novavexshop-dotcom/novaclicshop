@@ -191,58 +191,58 @@ export default function Header() {
             className="mobile-menu-panel"
             onClick={(e) => e.stopPropagation()}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <strong style={{ fontSize: '16px' }}>Menú</strong>
-              <button onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: 24, background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer' }}>×</button>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+              <strong style={{ fontSize: '17px' }}>Menú</strong>
+              <button onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: 28, background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', padding: '4px 8px' }}>×</button>
             </div>
 
             {/* Main nav + categories with subs (matching template sidebar) */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', marginBottom: '0.5rem' }}>
-              <Link href="/" className="nav-link" style={{ padding: '0.4rem 0.5rem' }} onClick={() => setIsMobileMenuOpen(false)}>🏠 Inicio</Link>
-              <Link href="/productos?category=arduino" className="nav-link" style={{ padding: '0.4rem 0.5rem', fontWeight: 600 }} onClick={() => setIsMobileMenuOpen(false)}><i className="fa-solid fa-diagram-project"></i> Arduino y Robótica</Link>
-              <div style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', fontSize: '13px' }}>
-                <Link href="/productos?category=arduino&subcategory=placas" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Placas de Desarrollo</Link>
-                <Link href="/productos?category=arduino&subcategory=sensores" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Sensores y Módulos</Link>
-                <Link href="/productos?category=arduino&subcategory=actuadores" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Motores y Relays</Link>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', marginBottom: '0.75rem' }}>
+              <Link href="/" className="nav-link" style={{ padding: '0.55rem 0.7rem', fontSize: '15px' }} onClick={() => setIsMobileMenuOpen(false)}>🏠 Inicio</Link>
+              <Link href="/productos?category=arduino" className="nav-link" style={{ padding: '0.55rem 0.7rem', fontWeight: 600, fontSize: '15px' }} onClick={() => setIsMobileMenuOpen(false)}><i className="fa-solid fa-diagram-project"></i> Arduino y Robótica</Link>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column', fontSize: '14.5px', gap: '2px' }}>
+                <Link href="/productos?category=arduino&subcategory=placas" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Placas de Desarrollo</Link>
+                <Link href="/productos?category=arduino&subcategory=sensores" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Sensores y Módulos</Link>
+                <Link href="/productos?category=arduino&subcategory=actuadores" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Motores y Relays</Link>
               </div>
 
-              <Link href="/productos?category=celular" className="nav-link" style={{ padding: '0.4rem 0.5rem', fontWeight: 600 }} onClick={() => setIsMobileMenuOpen(false)}><i className="fa-solid fa-mobile-screen"></i> Accesorios Celular</Link>
-              <div style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', fontSize: '13px' }}>
-                <Link href="/productos?category=celular&subcategory=carga" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Cargadores y Cables</Link>
-                <Link href="/productos?category=celular&subcategory=audio-cel" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Audio y Bluetooth</Link>
-                <Link href="/productos?category=celular&subcategory=proteccion" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Fundas y Vidrios</Link>
+              <Link href="/productos?category=celular" className="nav-link" style={{ padding: '0.55rem 0.7rem', fontWeight: 600, fontSize: '15px' }} onClick={() => setIsMobileMenuOpen(false)}><i className="fa-solid fa-mobile-screen"></i> Accesorios Celular</Link>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column', fontSize: '14.5px', gap: '2px' }}>
+                <Link href="/productos?category=celular&subcategory=carga" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Cargadores y Cables</Link>
+                <Link href="/productos?category=celular&subcategory=audio-cel" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Audio y Bluetooth</Link>
+                <Link href="/productos?category=celular&subcategory=proteccion" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Fundas y Vidrios</Link>
               </div>
 
-              <Link href="/productos?category=computadora" className="nav-link" style={{ padding: '0.4rem 0.5rem', fontWeight: 600 }} onClick={() => setIsMobileMenuOpen(false)}><i className="fa-solid fa-laptop"></i> Accesorios Computadora</Link>
-              <div style={{ paddingLeft: '1.2rem', display: 'flex', flexDirection: 'column', fontSize: '13px' }}>
-                <Link href="/productos?category=computadora&subcategory=perifericos" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Teclados y Mouse</Link>
-                <Link href="/productos?category=computadora&subcategory=audio-pc" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Audífonos Gamer</Link>
-                <Link href="/productos?category=computadora&subcategory=almacenamiento" style={{ padding: '2px 0', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>USB y Accesorios</Link>
+              <Link href="/productos?category=computadora" className="nav-link" style={{ padding: '0.55rem 0.7rem', fontWeight: 600, fontSize: '15px' }} onClick={() => setIsMobileMenuOpen(false)}><i className="fa-solid fa-laptop"></i> Accesorios Computadora</Link>
+              <div style={{ paddingLeft: '1rem', display: 'flex', flexDirection: 'column', fontSize: '14.5px', gap: '2px' }}>
+                <Link href="/productos?category=computadora&subcategory=perifericos" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Teclados y Mouse</Link>
+                <Link href="/productos?category=computadora&subcategory=audio-pc" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>Audífonos Gamer</Link>
+                <Link href="/productos?category=computadora&subcategory=almacenamiento" style={{ padding: '6px 0.5rem', color: 'var(--text-secondary)' }} onClick={() => setIsMobileMenuOpen(false)}>USB y Accesorios</Link>
               </div>
 
-              <Link href="/productos?filter=ofertas" className="nav-link" style={{ padding: '0.4rem 0.5rem' }} onClick={() => setIsMobileMenuOpen(false)}>🔥 Ofertas Especiales</Link>
+              <Link href="/productos?filter=ofertas" className="nav-link" style={{ padding: '0.55rem 0.7rem', fontSize: '15px' }} onClick={() => setIsMobileMenuOpen(false)}>🔥 Ofertas Especiales</Link>
             </div>
 
             <hr style={{ borderColor: 'var(--border-color)', margin: '0.5rem 0' }} />
 
             {/* Quick actions */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <a 
                 href="#" 
                 className="action-btn" 
-                style={{ justifyContent: 'flex-start', width: '100%', padding: '0.45rem 0.6rem', fontSize: 14 }} 
+                style={{ justifyContent: 'flex-start', width: '100%', padding: '0.6rem 0.75rem', fontSize: 15, minHeight: 48 }} 
                 onClick={(e) => { e.preventDefault(); setIsMobileMenuOpen(false); window.dispatchEvent(new CustomEvent('open-favorites')); }}
               >
-                <i className="fa-regular fa-heart" style={{ fontSize: 15 }}></i> 
-                <span style={{ marginLeft: 8, fontSize: 13 }}>Favoritos{favCount > 0 ? ` (${favCount})` : ''}</span>
+                <i className="fa-regular fa-heart" style={{ fontSize: 16 }}></i> 
+                <span style={{ marginLeft: 10, fontSize: 14.5 }}>Favoritos{favCount > 0 ? ` (${favCount})` : ''}</span>
               </a>
               <button 
                 className="action-btn" 
-                style={{ justifyContent: 'flex-start', width: '100%', padding: '0.45rem 0.6rem', fontSize: 14 }} 
+                style={{ justifyContent: 'flex-start', width: '100%', padding: '0.6rem 0.75rem', fontSize: 15, minHeight: 48 }} 
                 onClick={() => { setIsMobileMenuOpen(false); openCart(); }}
               >
-                <i className="fa-solid fa-cart-shopping" style={{ fontSize: 15 }}></i> 
-                <span style={{ marginLeft: 8, fontSize: 13 }}>Carrito{cartCount > 0 ? ` (${cartCount})` : ''}</span>
+                <i className="fa-solid fa-cart-shopping" style={{ fontSize: 16 }}></i> 
+                <span style={{ marginLeft: 10, fontSize: 14.5 }}>Carrito{cartCount > 0 ? ` (${cartCount})` : ''}</span>
               </button>
             </div>
 

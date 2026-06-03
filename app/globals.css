@@ -407,7 +407,13 @@ body {
 .app-main {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.5rem 1.25rem 3rem;
+  padding: 1rem 1rem 2rem;
+}
+
+@media (max-width: 480px) {
+  .app-main {
+    padding: 0.6rem 0.6rem 1.25rem;
+  }
 }
 
 .layout-wrapper {
@@ -1633,6 +1639,19 @@ body {
     gap: 0.4rem;
     font-size: 11px;
   }
+  .search-box {
+    max-width: 140px;
+  }
+  .search-box input {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+  .brand-text h1 {
+    font-size: 15px;
+  }
+  .brand-text p {
+    font-size: 8px;
+  }
 }
 
 /* Product detail page */
@@ -1754,25 +1773,30 @@ body {
 /* Product cards - better for small phones */
 @media (max-width: 480px) {
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 0.65rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .product-card {
+    min-height: 210px;
   }
   .product-card .info {
-    padding: 0.55rem 0.6rem 0.7rem;
+    padding: 0.5rem 0.55rem 0.65rem;
   }
   .product-card .name {
-    font-size: 12.5px;
-    line-height: 1.2;
+    font-size: 12.8px;
+    line-height: 1.25;
+    min-height: 2.4em;
   }
   .product-card .price-row {
-    margin: 0.2rem 0 0.35rem;
+    margin: 0.15rem 0 0.3rem;
   }
   .product-card .price {
-    font-size: 13px;
+    font-size: 13.5px;
   }
   .btn-add {
-    font-size: 12px;
-    padding: 6px 10px;
+    font-size: 12.5px;
+    padding: 7px 8px;
+    min-height: 32px;
   }
   .product-card .fav-btn {
     width: 28px;
@@ -1780,6 +1804,17 @@ body {
     font-size: 13px;
     top: 6px;
     right: 6px;
+  }
+  .app-main {
+    padding: 0.5rem 0.6rem 1.5rem;
+  }
+
+  /* Text boost inside mobile UI for readability on small phones */
+  .mobile-menu-panel .nav-link,
+  .catalog-mobile-panel .cat-item,
+  .catalog-mobile-panel .subcat-item,
+  .product-card .name {
+    font-size: 15px;
   }
 }
 
@@ -1805,34 +1840,53 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 82%;
-  max-width: 280px;
+  width: 94%;
+  max-width: 340px;
   height: 100%;
   background: var(--bg-secondary);
   border-right: 1px solid var(--border-color);
-  padding: 1rem;
+  padding: 1rem 0.75rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.4);
 }
 
 .mobile-menu-panel .nav-link {
+  min-height: 52px !important;
+  padding: 0.65rem 0.8rem !important;
+  font-size: 15.5px !important;
+  margin: 1px 0;
+  border-radius: 8px;
+}
+
+.mobile-menu-panel div[style*="paddingLeft"] {
+  padding-left: 1.1rem !important;
+  font-size: 14.5px !important;
+  line-height: 1.4;
+}
+
+.mobile-menu-panel a[style*="padding: '2px 0'"],
+.mobile-menu-panel a[style*="padding: 2px 0"] {
+  padding: 8px 0.6rem !important;
   min-height: 44px;
-  display: flex;
-  align-items: center;
-  font-size: 14.5px;
+  font-size: 14.5px !important;
 }
 
 @media (max-width: 480px) {
   .mobile-menu-panel {
-    width: 85%;
-    max-width: 260px;
-    padding: 0.75rem;
+    width: 96%;
+    max-width: none;
+    padding: 0.8rem 0.5rem;
   }
   .mobile-menu-panel .nav-link {
-    padding: 0.5rem 0.4rem;
-    font-size: 14px;
+    min-height: 56px !important;
+    font-size: 16px !important;
+    padding: 0.7rem 0.7rem !important;
+  }
+  .mobile-menu-panel div[style*="paddingLeft"] {
+    font-size: 15px !important;
   }
 }
 
@@ -1848,21 +1902,38 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 82%;
-  max-width: 280px;
+  width: 94%;
+  max-width: 340px;
   height: 100%;
   background: var(--bg-secondary);
   border-right: 1px solid var(--border-color);
-  padding: 1rem;
+  padding: 1rem 0.75rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.catalog-mobile-panel .cat-item,
+.catalog-mobile-panel .subcat-item {
+  min-height: 48px;
+  padding: 0.6rem 0.7rem !important;
+  font-size: 15px !important;
+}
+
+.catalog-mobile-panel .subcategories {
+  padding-left: 1rem !important;
 }
 
 @media (max-width: 480px) {
   .catalog-mobile-panel {
-    width: 85%;
-    max-width: 260px;
-    padding: 0.75rem;
+    width: 96%;
+    max-width: none;
+    padding: 0.8rem 0.5rem;
+  }
+  .catalog-mobile-panel .cat-item,
+  .catalog-mobile-panel .subcat-item {
+    min-height: 52px;
+    font-size: 15.5px !important;
   }
 }
 
@@ -1940,5 +2011,21 @@ body {
   }
   .cart-item {
     grid-template-columns: 48px 1fr 80px;
+    padding: 0.6rem 0.5rem;
+  }
+  .cart-item img {
+    width: 42px;
+    height: 42px;
+  }
+  .cart-item-info .name {
+    font-size: 13px;
+  }
+  .cart-item-qty button {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+  .cart-sidebar-header {
+    padding: 0.75rem 0.6rem;
   }
 }
